@@ -81,7 +81,7 @@ export function CalendarView({ regularTasks }: CalendarViewProps) {
       if (hasTasksOnDate(date)) {
         setShowPopover(true)
       }
-    }, 2000)
+    }, 500)
   }
 
   const handleDateLeave = () => {
