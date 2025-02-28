@@ -29,12 +29,14 @@ interface RegularTasksManagerProps {
   regularTasks: RegularTask[]
   onTaskUpdated: (task: RegularTask) => void
   onTaskDeleted: (taskId: string) => void
+  onTaskCreated: (task: RegularTask) => void
 }
 
 export function RegularTasksManager({
   regularTasks,
   onTaskUpdated,
   onTaskDeleted,
+  onTaskCreated,
 }: RegularTasksManagerProps) {
   const [isEditDialogOpen, setIsEditDialogOpen] = useState(false)
   const [editingTask, setEditingTask] = useState<RegularTask | null>(null)
@@ -57,6 +59,16 @@ export function RegularTasksManager({
       setDeleteConfirmOpen(false)
       setTaskToDelete(null)
     }
+  }
+
+  const handleTaskSubmit = (task: RegularTask) => {
+    if (editingTask) {
+      onTaskUpdated(task)
+    } else {
+      onTaskCreated(task)
+    }
+    setIsEditDialogOpen(false)
+    setEditingTask(null)
   }
 
   const getFrequencyLabel = (frequency: string) => {
@@ -139,7 +151,7 @@ export function RegularTasksManager({
           setIsEditDialogOpen(false)
           setEditingTask(null)
         }}
-        onTaskCreated={onTaskUpdated}
+        onTaskCreated={handleTaskSubmit}
         editingTask={editingTask}
       />
 

@@ -30,6 +30,12 @@ export default function DashboardPage() {
     localStorage.setItem("regularTasks", JSON.stringify(updatedTasks))
   }
 
+  const handleRegularTaskCreated = (newTask: RegularTask) => {
+    const updatedTasks = [...regularTasks, newTask]
+    setRegularTasks(updatedTasks)
+    localStorage.setItem("regularTasks", JSON.stringify(updatedTasks))
+  }
+
   return (
     <div className="container py-6">
       <Tabs defaultValue="calendar" className="space-y-4">
@@ -48,6 +54,7 @@ export default function DashboardPage() {
         <TabsContent value="regular">
           <RegularTasksManager
             regularTasks={regularTasks}
+            onTaskCreated={handleRegularTaskCreated}
             onTaskUpdated={handleRegularTaskUpdated}
             onTaskDeleted={handleRegularTaskDeleted}
           />
