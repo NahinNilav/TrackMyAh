@@ -5,7 +5,7 @@ import { usePathname, useRouter } from "next/navigation"
 import { Calendar, List, LogOut, Package } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
-import { useEffect, useState } from "react"
+import { useState, useEffect } from "react"
 
 export default function Header() {
   const pathname = usePathname()
@@ -16,10 +16,8 @@ export default function Header() {
     const email = localStorage.getItem("userEmail")
     if (email) {
       setUserEmail(email)
-    } else {
-      router.push("/")
     }
-  }, [router])
+  }, [])
 
   const handleSignOut = () => {
     localStorage.removeItem("userEmail")

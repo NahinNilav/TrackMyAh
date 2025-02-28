@@ -1,4 +1,4 @@
-import type React from "react"
+import { RouteGuard } from "@/components/route-guard"
 import Header from "@/components/header"
 
 export default function DashboardLayout({
@@ -7,10 +7,12 @@ export default function DashboardLayout({
   children: React.ReactNode
 }) {
   return (
-    <div className="min-h-screen flex flex-col">
-      <Header />
-      <main className="flex-1 p-4 md:p-10 bg-muted/40">{children}</main>
-    </div>
+    <RouteGuard>
+      <div className="min-h-screen flex flex-col">
+        <Header />
+        <main className="flex-1 bg-background">{children}</main>
+      </div>
+    </RouteGuard>
   )
 }
 
