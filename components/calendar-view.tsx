@@ -39,6 +39,14 @@ export function CalendarView({ regularTasks }: CalendarViewProps) {
   const [showPopover, setShowPopover] = useState(false)
   const hoverTimerRef = useRef<NodeJS.Timeout | null>(null)
 
+  // Add this useEffect to load tasks from localStorage
+  useEffect(() => {
+    const storedTasks = localStorage.getItem("tasks")
+    if (storedTasks) {
+      setTasks(JSON.parse(storedTasks))
+    }
+  }, [])
+
   const months = [
     "January",
     "February",
