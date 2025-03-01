@@ -49,7 +49,16 @@ export function DateRangePicker({
             )}
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="w-auto p-0" align="start">
+        <PopoverContent className="w-auto p-0 flex flex-col sm:flex-row" align="start">
+          <Calendar
+            initialFocus
+            mode="range"
+            defaultMonth={value?.from}
+            selected={value}
+            onSelect={onChange}
+            numberOfMonths={1}
+            className="sm:hidden"
+          />
           <Calendar
             initialFocus
             mode="range"
@@ -57,6 +66,7 @@ export function DateRangePicker({
             selected={value}
             onSelect={onChange}
             numberOfMonths={2}
+            className="hidden sm:block"
           />
         </PopoverContent>
       </Popover>

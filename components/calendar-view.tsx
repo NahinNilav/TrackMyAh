@@ -129,6 +129,16 @@ export function CalendarView({ regularTasks }: CalendarViewProps) {
     localStorage.setItem("regularTasks", JSON.stringify(updatedTasks))
   }
 
+  const renderTaskCount = (date: Date) => {
+    const count = getTasksForDate(date).length
+    if (count === 0) return null
+    return (
+      <div className="absolute bottom-1 right-1 text-xs bg-purple-100 text-purple-900 rounded-full px-1.5">
+        {count}
+      </div>
+    )
+  }
+
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">

@@ -6,7 +6,7 @@ const users = [
   {
     id: "1",
     name: "Demo User",
-    email: "admin@gmail.com",
+    email: "pookie@gmail.com",
     password: "123",
   },
 ]

@@ -22,7 +22,7 @@ export default function LoginForm() {
     setIsLoading(true)
 
     // Simple client-side validation
-    if (email === "admin@gmail.com" && password === "123") {
+    if (email === "pookie@gmail.com" && password === "123") {
       // Simulate login
       setTimeout(() => {
         setIsLoading(false)
@@ -40,40 +40,47 @@ export default function LoginForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
-      <div className="space-y-2">
-        <Label htmlFor="email">Email</Label>
-        <Input
-          id="email"
-          type="email"
-          placeholder="you@example.com"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-          className="bg-white"
-        />
+    <div className="space-y-6">
+      <div className="bg-blue-50 border border-blue-200 rounded-md p-4 text-sm text-blue-700">
+        <p className="font-medium">Demo Credentials:</p>
+        <p>Email: pookie@gmail.com</p>
+        <p>Password: 123</p>
       </div>
-      <div className="space-y-2">
-        <Label htmlFor="password">Password</Label>
-        <Input
-          id="password"
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-          className="bg-white"
-        />
-      </div>
-      <Button type="submit" className="w-full gradient-primary" disabled={isLoading}>
-        {isLoading ? "Signing in..." : "Sign in"}
-      </Button>
-      <p className="text-center text-sm text-neutral-600">
-        Don't have an account?{" "}
-        <Link href="/signup" className="font-medium text-neutral-900 hover:underline">
-          Sign up
-        </Link>
-      </p>
-    </form>
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div className="space-y-2">
+          <Label htmlFor="email">Email</Label>
+          <Input
+            id="email"
+            type="email"
+            placeholder="you@example.com"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            className="bg-white"
+          />
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="password">Password</Label>
+          <Input
+            id="password"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            className="bg-white"
+          />
+        </div>
+        <Button type="submit" className="w-full gradient-primary" disabled={isLoading}>
+          {isLoading ? "Signing in..." : "Sign in"}
+        </Button>
+        <p className="text-center text-sm text-neutral-600">
+          Don't have an account?{" "}
+          <Link href="/signup" className="font-medium text-neutral-900 hover:underline">
+            Sign up
+          </Link>
+        </p>
+      </form>
+    </div>
   )
 }
 
