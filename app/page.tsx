@@ -2,7 +2,7 @@ import LoginForm from "@/components/login-form"
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-neutral-100 via-neutral-50 to-white">
+    <main className="min-h-screen flex flex-col items-center justify-center">
       <div className="w-full max-w-md space-y-8 p-4">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-neutral-900">TrackMyAh</h1>

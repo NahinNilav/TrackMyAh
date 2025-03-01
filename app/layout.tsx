@@ -13,14 +13,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        {children}
+      <body className="min-h-screen bg-gradient-to-br from-purple-100/30 via-white to-purple-100/20">
         <Toaster />
+        {children}
       </body>
     </html>
   )
