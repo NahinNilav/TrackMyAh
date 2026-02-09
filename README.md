@@ -147,7 +147,7 @@ TrackMyAh/
 
 ## 📝 License
 
-This project is built for portfolio and educational purposes.
+MIT License - This project is built for portfolio and educational purposes. Feel free to use and modify for your own learning.
 
 ---
 
