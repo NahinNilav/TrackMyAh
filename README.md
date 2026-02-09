@@ -91,64 +91,6 @@ npm run start    # Start production server
 npm run lint     # Run ESLint
 ```
 
-## 📁 Project Structure
-
-```
-TrackMyAh/
-├── app/                      # Next.js 14 App Router
-│   ├── dashboard/           # Main dashboard with tabs
-│   │   ├── list/           # List view route
-│   │   └── page.tsx        # Calendar & regular tasks
-│   ├── signup/             # User registration
-│   ├── layout.tsx          # Root layout with providers
-│   └── page.tsx            # Landing/login page
-├── components/              # React components
-│   ├── ui/                 # Reusable UI primitives (shadcn/ui)
-│   ├── calendar-view.tsx   # GitHub-style heatmap
-│   ├── list-view.tsx       # Sortable task list
-│   ├── regular-tasks-manager.tsx
-│   ├── task-dialog.tsx     # Task creation modal
-│   └── theme-provider.tsx  # Dark mode support
-├── lib/                     # Utilities and types
-│   ├── types.ts            # TypeScript interfaces
-│   ├── utils.ts            # Helper functions
-│   └── auth.ts             # Authentication logic
-├── hooks/                   # Custom React hooks
-├── styles/                  # Global styles
-└── public/                  # Static assets
-```
-
-## 🎓 Technical Highlights
-
-### Advanced React Patterns
-- **Custom Hooks**: Reusable logic for state management and side effects
-- **Component Composition**: Modular architecture with clear separation of concerns
-- **Server & Client Components**: Strategic use of RSC for optimal performance
-- **TypeScript Integration**: Comprehensive type definitions for all components
-
-### State Management
-- **Local Storage Persistence**: Client-side data persistence
-- **React Hooks**: useState, useEffect, useMemo, useRef for efficient state handling
-- **Prop Drilling Prevention**: Context API integration where appropriate
-
-### Performance Optimizations
-- **Lazy Loading**: Dynamic imports for code splitting
-- **Memoization**: useMemo for expensive computations
-- **Efficient Re-renders**: Strategic component optimization
-- **Next.js Image Optimization**: Automatic image optimization
-
-## 🌟 Design Decisions
-
-1. **Heatmap Visualization**: Inspired by GitHub's contribution graph to gamify productivity
-2. **Multiple Views**: Different perspectives (calendar, list, recurring) for various use cases
-3. **Regular Tasks**: Addresses the common need for habit tracking and recurring responsibilities
-4. **Type Safety**: TypeScript throughout for maintainable, error-free code
-5. **Component Library**: Radix UI + shadcn/ui for consistent, accessible components
-
 ## 📝 License
 
 MIT License - This project is built for portfolio and educational purposes. Feel free to use and modify for your own learning.
-
----
-
-**Built with ❤️ using Next.js 14, React 18, and TypeScript**
